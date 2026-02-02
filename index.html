@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">ECE sh.p.k | Ndërtim Cilësor & Profesional</title>
+    <meta name="description" data-i18n="meta_description" content="ECE sh.p.k - Kompani lider në ndërtim, rindërtim dhe zhvillim projektesh në Shqipëri. Cilësi, siguri dhe afat respektimi.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ================================================== -->
+    <!--                  DETAILED & RICH CSS               -->
+    <!-- ================================================== -->
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-dark: #1e3a8a;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #4b5563;
+            --gray-light: #9ca3af;
+            --white: #ffffff;
+            --black: #000000;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            color: var(--dark);
+            background: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ========================================= */
+        /*               HEADER & NAV                */
+        /* ========================================= */
+        header {
+            background: linear-gradient(to right, rgba(30,64,175,0.97), rgba(30,58,138,0.97));
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1300;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(8px);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            position: relative;
+            transition: var(--transition);
+            padding: 0.4rem 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2.5px;
+            bottom: -4px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.35s ease;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .lang-switcher button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.6rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            opacity: 0.85;
+        }
+
+        .lang-switcher button:hover,
+        .lang-switcher button.active {
+            opacity: 1;
+            background: rgba(255,255,255,0.18);
+            transform: scale(1.08);
+        }
+
+        .lang-switcher img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+            transition: var(--transition);
+        }
+
+        .lang-switcher button.active img {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(245,158,11,0.3);
+        }
+
+        /* ========================================= */
+        /*                 HERO SECTION               */
+        /* ========================================= */
+        .hero {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                url('Model pallat golem.jpg') center/cover no-repeat;
+    background-attachment: scroll;          /* safer default */
+}
+
+/* Optional: fixed only on desktop */
+@media (min-width: 768px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(30,64,175,0.15), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 960px;
+            padding: 2.5rem;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1.4rem;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            animation: fadeInDown 1.4s ease-out;
+            color: #ff0000 !important;           /* gold */
+    text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.9rem;
+            font-weight: 400;
+            margin-bottom: 2.8rem;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.4s 0.7s backwards;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
+            color: #ff0000 !important;           /* light gold/cream */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 1.3rem 3.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.35rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(245,158,11,0.35);
+            animation: fadeInUp 1.4s 1.4s backwards;
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 16px 40px rgba(245,158,11,0.5);
+        }
+
+        /* ========================================= */
+        /*               SECTION STYLES               */
+        /* ========================================= */
+        section {
+            padding: 7rem 5%;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.4rem;
+            font-weight: 800;
+            margin-bottom: 4rem;
+            color: var(--secondary);
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), #fbbf24);
+            margin: 1.5rem auto 0;
+            border-radius: 3px;
+        }
+
+        /* About */
+        .about {
+            background: linear-gradient(135deg, var(--light) 0%, #f1f5f9 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 1.22rem;
+            margin-bottom: 1.8rem;
+            color: var(--gray);
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .about-img img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.8rem;
+            margin-top: 5rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 2.8rem 1.8rem;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(30,64,175,0.18);
+        }
+
+        .stat-item i {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 1.4rem;
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-item p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.8rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2.2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(30,64,175,0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-16px);
+            box-shadow: 0 30px 60px rgba(30,64,175,0.2);
+            border-color: var(--accent);
+        }
+
+        .service-card i {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover i {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.85rem;
+            margin-bottom: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Video */
+        .video-section {
+            background: linear-gradient(to bottom, var(--light), #e2e8f0);
+            text-align: center;
+            padding: 8rem 5%;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            max-width: 1200px;
+            margin: 4rem auto 0;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            background: var(--light);
+            padding-bottom: 10rem;
+        }
+
+        .gallery-category {
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1.6rem 2rem;
+            font-size: 1.65rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .category-header:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(30,64,175,0.3);
+        }
+
+        .category-header .cat-title {
+            flex: 1;
+            text-align: left;
+        }
+
+        .category-header .arrow {
+            font-size: 1.6rem;
+            transition: var(--transition);
+        }
+
+        .category-content {
+            display: none;
+            padding: 2.5rem 0;
+            background: white;
+            border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.06);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.94);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 94%;
+            max-height: 86vh;
+            border-radius: 16px;
+            box-shadow: 0 20px 70px rgba(0,0,0,0.7);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: white;
+            margin-top: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+            max-width: 90%;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            pointer-events: none;
+        }
+
+        .lightbox-btn {
+            pointer-events: auto;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 70px;
+            height: 70px;
+            font-size: 2.8rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox-btn:hover {
+            background: rgba(255,255,255,0.45);
+            transform: scale(1.1);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .close-lightbox:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        /* Tables */
+        .machine-table, .project-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 2rem;
+            font-size: 1.08rem;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .machine-table th, .machine-table td,
+        .project-table th, .project-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .machine-table th, .project-table th {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .machine-table tr:last-child td,
+        .project-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .machine-table tr:hover,
+        .project-table tr:hover {
+            background: #f8fafc;
+        }
+
+        .machine-table td:first-child,
+        .project-table td:first-child {
+            text-align: center;
+            font-weight: bold;
+            width: 80px;
+            background: #f1f5f9;
+        }
+
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, var(--dark) 0%, #111827 100%);
+            color: white;
+            padding: 9rem 5% 6rem;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(245,158,11,0.08), transparent 60%);
+            pointer-events: none;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info h3 {
+            font-size: 2.6rem;
+            margin-bottom: 3rem;
+            color: var(--accent);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item i {
+            font-size: 2.6rem;
+            color: var(--accent);
+            margin-right: 2rem;
+            margin-top: 0.4rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.06);
+            padding: 3.5rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.9rem;
+            font-weight: 600;
+            color: white;
+            font-size: 1.15rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1.3rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 5px rgba(245,158,11,0.25);
+        }
+
+        .contact-form button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1.4rem 4rem;
+            border-radius: 60px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 2rem auto 0;
+        }
+
+        .contact-form button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(245,158,11,0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #aaa;
+            text-align: center;
+            padding: 4rem 5%;
+            font-size: 1.15rem;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-70px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(70px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero h1 { font-size: 4.2rem; }
+            .hero p { font-size: 1.6rem; }
+        }
+
+        @media (max-width: 992px) {
+            .about-content, .contact-container { grid-template-columns: 1fr; }
+            .about-content { gap: 4rem; }
+            nav ul { gap: 1.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; padding: 1.4rem 6%; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 1.4rem; margin-top: 1rem; }
+            .hero { height: 85vh; }
+            .hero h1 { font-size: 3.4rem; }
+            .hero p { font-size: 1.45rem; }
+            .section-title { font-size: 2.6rem; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+            .gallery-item img { height: 150px; }
+            .category-header { font-size: 1.4rem; padding: 1.3rem 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================== -->
+    <!--       HEADER       -->
+    <!-- ================== -->
+    <header>
+        <div class="navbar">
+            <div class="logo">ECE <span>sh.p.k</span></div>
+
+            <nav>
+                <ul>
+                    <li><a href="#home" data-i18n="nav_home">Kryefaqja</a></li>
+                    <li><a href="#about" data-i18n="nav_about">Rreth Nesh</a></li>
+                    <li><a href="#services" data-i18n="nav_services">Shërbimet</a></li>
+                    <li><a href="#video" data-i18n="nav_video">Video</a></li>
+                    <li><a href="#galeria" data-i18n="nav_gallery">Galeri</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <div class="lang-switcher" id="langSwitcher">
+                <button data-lang="sq" title="Shqip" class="active"><img src="https://flagcdn.com/w40/al.png" alt="Shqip"></button>
+                <button data-lang="en" title="English"><img src="https://flagcdn.com/w40/gb.png" alt="English"></button>
+                <button data-lang="it" title="Italiano"><img src="https://flagcdn.com/w40/it.png" alt="Italiano"></button>
+                <button data-lang="de" title="Deutsch"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================== -->
+    <!--        HERO        -->
+    <!-- ================== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">ECE sh.p.k</h1>
+            <p data-i18n="hero_subtitle">Ndërtim me cilësi të lartë, siguri dhe respektim të afateve</p>
+            <a href="#contact" class="btn" data-i18n="hero_button">Na Kontaktoni</a>
+        </div>
+    </section>
+
+    <!-- ================== -->
+    <!--       ABOUT        -->
+    <!-- ================== -->
+    <section id="about" class="about">
+        <h2 class="section-title" data-i18n="about_title">Rreth <span>ECE sh.p.k</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 data-i18n="about_subtitle">Profesionalizëm & Përvojë që Nga Viti 2022</h3>
+                <p data-i18n="about_p1">ECE sh.p.k është një nga kompanitë në fushën e ndërtimit në Shqipëri. Me mbi 4 vjet përvojë, ne ofrojmë shërbime të plota në ndërtim banesash, objekte tregtare, infrastrukturë, linja elektrike dhe nënstacione elektrike</p>
+                <p data-i18n="about_p2">Ekipi ynë përbëhet nga inxhinierë të certifikuar, arkitektë dhe punëtorë të kualifikuar që garantojnë cilësi të lartë në çdo projekt.</p>
+                <p data-i18n="about_p3">Ne punojmë me materialet më të mira dhe teknologjitë më të avancuara për t'ju ofruar zgjidhje të qëndrueshme dhe estetike.</p>
+            </div>
+            <div class="about-img">
+                <img src="Logo ECE.jpg" alt="ECE sh.p.k Logo">
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <i class="fas fa-building"></i>
+                <div class="stat-number">29</div>
+                <p data-i18n="stat_projects">Projekte të Përfunduara</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <div class="stat-number">25+</div>
+                <p data-i18n="stat_clients">Klientë të Kënaqur</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-award"></i>
+                <div class="stat-number">4</div>
+                <p data-i18n="stat_years">Vite Përvojë</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-hard-hat"></i>
+                <div class="stat-number">44+</div>
+                <p data-i18n="stat_workers">Punonjës Profesionistë</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== -->
+    <!--      SERVICES      -->
+    <!-- ================== -->
+    <section id="services">
+        <h2 class="section-title" data-i18n="services_title">Shërbimet <span>Tona</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3 data-i18n="service_residential">Ndërtim Banesash</h3>
+                <p data-i18n="service_residential_desc">Ndërtim pallatesh dhe vilash moderne me cilësi premium dhe dizajn bashkëkohor.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-store"></i>
+                <h3 data-i18n="service_commercial">Objekte Tregtare</h3>
+                <p data-i18n="service_commercial_desc">Ndërtim qendrash tregtare, dyqane dhe ambiente biznesi funksionale.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bolt"></i>
+                <h3 data-i18n="service_powerlines">Linja Elektrike</h3>
+                <p data-i18n="service_powerlines_desc">Ndërtim të linjave elektrike TL.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-road"></i>
+                <h3 data-i18n="service_infrastructure">Infrastrukturë</h3>
+                <p data-i18n="service_infrastructure_desc">Ndërtim rrugësh, ura dhe sisteme kullimi sipas standardeve evropiane.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-drafting-compass"></i>
+                <h3 data-i18n="service_design">Projektim</h3>
+                <p data-i18n="service_design_desc">Projektim arkitektonik dhe inxhinierik nga ideja deri te realizimi.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-leaf"></i>
+                <h3 data-i18n="service_green">Ndërtim i Gjelbër</h3>
+                <p data-i18n="service_green_desc">Zbatimi i standardeve të ndërtimit të qëndrueshëm dhe efikas energjetikisht.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== -->
+    <!--        VIDEO       -->
+    <!-- ================== -->
+    <section id="video" class="video-section">
+        <h2 class="section-title" data-i18n="video_title">Shiko një <span>Projekt</span> tonë në veprim</h2>
+        <div class="video-wrapper">
+            <video controls preload="metadata">
+                <source src="video/ecevideo.mp4" type="video/mp4">
+                <span data-i18n="video_fallback">Shfletuesi juaj nuk mbështet formatin e videos.</span>
+            </video>
+        </div>
+    </section>
+
+    <!-- ================== -->
+    <!--       GALLERY      -->
+    <!-- ================== -->
+    <section id="galeria" class="gallery-section">
+        <h2 class="section-title" data-i18n="gallery_title">Galeri e <span>Projekteve & Informacione</span></h2>
+
+        <!-- === Category 1 === -->
+        <div class="gallery-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="cat-title" data-i18n="gallery_golem">Pallat në Golem</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="category-content" data-category="golem">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-index="0" data-src="foto (1).jpg" data-caption="Pallat në Golem – Pamja e Parë">
+                        <img src="foto/foto (1).jpg" alt="Pallat në Golem 1" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="1" data-src="foto (2).jpg" data-caption="Pallat në Golem – Pamja e Dytë">
+                        <img src="foto/foto (2).jpg" alt="Pallat në Golem 2" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="2" data-src="foto (3).jpg" data-caption="Pallat në Golem – Pamja e Tretë">
+                        <img src="foto/foto (3).jpg" alt="Pallat në Golem 3" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="3" data-src="foto (4).jpg" data-caption="Pallat në Golem – Pamja e Katërt">
+                        <img src="foto/foto (4).jpg" alt="Pallat në Golem 4" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- === Category 2 === -->
+        <div class="gallery-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="cat-title" data-i18n="gallery_fier">Nënstacion në Fier</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="category-content" data-category="fier">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-index="0" data-src="nënstacion1.jpg" data-caption="Nënstacion në Fier – Pamje e Jashtme">
+                        <img src="foto/nënstacion1.jpg" alt="Nënstacion Fier 1" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="1" data-src="nënstacion2.jpg" data-caption="Nënstacion në Fier – Pamje e Jashtme">
+                        <img src="foto/nënstacion2.jpg" alt="Nënstacion Fier 2" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="2" data-src="nënstacion3.jpg" data-caption="Nënstacion në Fier – Pamje e Jashtme">
+                        <img src="foto/nënstacion3.jpg" alt="Nënstacion Fier 3" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="3" data-src="nënstacion4.jpg" data-caption="Nënstacion në Fier – Pamja e Brendshme">
+                        <img src="foto/nënstacion4.jpg" alt="Nënstacion Fier 4" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- === Category 3 === -->
+        <div class="gallery-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="cat-title" data-i18n="gallery_lushnje">Linjë Elektrike Lushnjë</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="category-content" data-category="lushnje">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-index="0" data-src="foto/lushnje-1.jpg" data-caption="Linjë Elektrike Lushnjë – Posta e tensionit të lartë">
+                        <img src="foto/lushnje-1.jpg" alt="Linjë Lushnjë 1" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="1" data-src="foto/lushnje-2.jpg" data-caption="Linjë Elektrike Lushnjë – Kabllo dhe shtylla">
+                        <img src="foto/lushnje-2.jpg" alt="Linjë Lushnjë 2" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="2" data-src="foto/lushnje-3.jpg" data-caption="Linjë Elektrike Lushnjë – Punime në terren">
+                        <img src="foto/lushnje-3.jpg" alt="Linjë Lushnjë 3" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-index="3" data-src="foto/lushnje-4.jpg" data-caption="Linjë Elektrike Lushnjë – Pamje e përgjithshme">
+                        <img src="foto/lushnje-4.jpg" alt="Linjë Lushnjë 4" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- === Category 4: Machines === -->
+        <div class="gallery-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="cat-title" data-i18n="gallery_machines">Pajisje / Machines</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="category-content">
+                <table class="machine-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="table_type">Lloji</th>
+                            <th data-i18n="table_brand">Marka</th>
+                            <th data-i18n="table_model">Modeli</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kamion</td><td>MAN</td><td>17-132</td></tr>
+                        <tr><td>Kamion</td><td>VOLVO</td><td>FL12 380</td></tr>
+                        <tr><td>Kamion</td><td>IVECO</td><td>MAGIRUS</td></tr>
+                        <tr><td>Kamion</td><td>MERCEDES</td><td>-</td></tr>
+                        <tr><td>Automjet</td><td>NISSAN</td><td>NP300 PICK-UP</td></tr>
+                        <tr><td>Automjet</td><td>FORD</td><td>TRANSIT</td></tr>
+                        <tr><td>Automjet</td><td>VOLKSWAGEN</td><td>CRAFTER</td></tr>
+                        <tr><td>Autoveturë</td><td>MERCEDES</td><td>E220D</td></tr>
+                        <tr><td>Autoveturë</td><td>VOLKSWAGEN</td><td>CADDY LIFE</td></tr>
+                        <tr><td>Tërheqës</td><td>VOLVO</td><td>FH</td></tr>
+                        <tr><td>Gjysëmrimorkio</td><td>GOEBEL</td><td>-</td></tr>
+                        <tr><td>Gjysëmrimorkio</td><td>MENCI</td><td>-</td></tr>
+                        <tr><td>Ngarkues Backhoe</td><td>JCB</td><td>3CX</td></tr>
+                        <tr><td>Eskavator</td><td>KOMATSU</td><td>PC230</td></tr>
+                        <tr><td>Mini Eskavator</td><td>YANMAR</td><td>8T</td></tr>
+                        <tr><td>Bobcat</td><td>CATERPILLAR</td><td>246</td></tr>
+                        <tr><td>Rrul Ngjeshes</td><td>-</td><td>15T</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- === Category 5: All Projects (29 entries) === -->
+        <div class="gallery-category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <span class="cat-title" data-i18n="gallery_projects">Punime të Realizuara / Projekte të Përfunduara</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="category-content">
+                <table class="project-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="table_nr">Nr.</th>
+                            <th data-i18n="table_object">Objekti</th>
+                            <th data-i18n="table_investor">Investori</th>
+                            <th data-i18n="table_year">Viti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Linjë elektrike 20 kV</td><td>HEC Bori Lure</td><td>2022</td></tr>
+                        <tr><td>2</td><td>Punime në nënstacionin 110/35/20 kV Hoxhare Fier</td><td>ETS SHPK</td><td>2022</td></tr>
+                        <tr><td>3</td><td>Punime në nënstacionin 220/132 kV, Vlorë</td><td>ELB Ndërtuesi</td><td>2022</td></tr>
+                        <tr><td>4</td><td>Punime për traktin në nënstacionin 35 kV Hoxhare Fier</td><td>Encoal</td><td>2022</td></tr>
+                        <tr><td>5</td><td>Pallat 6-katësh me sipërfaqe 7200 m² në Tiranë</td><td>Alb-Tiefbau</td><td>2023</td></tr>
+                        <tr><td>6</td><td>Rikonstruksion pallati 8-katësh si pasojë e tërmetit</td><td>Familja Llanaj</td><td>2022</td></tr>
+                        <tr><td>7</td><td>Punime në parkun fotovoltaik smartwat me fuqi 2MW</td><td>ETS SHPK</td><td>2022</td></tr>
+                        <tr><td>8</td><td>Punime në sistemin fotovoltaik me fuqi 1 MW në Berat</td><td>ETS SHPK</td><td>2022</td></tr>
+                        <tr><td>9</td><td>Instalimet e sistemeve elektrike, mbrojtje nga zjarri, sisteme alarmi, sisteme vëzhgimi në shkolla të ndryshme</td><td>Ndregjoni shpk</td><td>2022</td></tr>
+                        <tr><td>10</td><td>Punime në nënstacionin 220 kV/110 në Hoxhare</td><td>LA-OR shpk</td><td>2023</td></tr>
+                        <tr><td>11</td><td>Punime në linjen elektrike 35 kV TEC Fier-Hoxhare</td><td>ETS SHPK</td><td>2023</td></tr>
+                        <tr><td>12</td><td>Ndërtim linjë kabllore 35 kV</td><td>Encoal</td><td>2024</td></tr>
+                        <tr><td>13</td><td>Punime Ndërtimore për Parkun Fotovoltaik</td><td>Encoal</td><td>2024</td></tr>
+                        <tr><td>14</td><td>Ndërtim Linjë 35 kV</td><td>Enbi Power</td><td>2024</td></tr>
+                        <tr><td>15</td><td>Ndërtim Godinë Industriale 2400 m²</td><td>Sinamati Group</td><td>2024</td></tr>
+                        <tr><td>16</td><td>Ndërtim Bazamente Linjë 220 kV</td><td>Evolve shpk</td><td>2024</td></tr>
+                        <tr><td>17</td><td>Ndërtim Nënstacioni 110/35/20/10 kV Lezhë</td><td>ARK-AM shpk</td><td>2024</td></tr>
+                        <tr><td>18</td><td>Ndërtim Nënstacioni 110/20 kV Skrapar</td><td>ARK-AM shpk</td><td>2024</td></tr>
+                        <tr><td>19</td><td>Ndërtim Nënstacioni Blue1 110/35 kV</td><td>Matrix Konstruksion</td><td>2024</td></tr>
+                        <tr><td>20</td><td>Ndërtim Bazamente Linjë 110 kV</td><td>Electreus</td><td>2024</td></tr>
+                        <tr><td>21</td><td>Ndërtim bazamente të Nënstacionit 220 kV</td><td>Kastrati Group</td><td>2024</td></tr>
+                        <tr><td>22</td><td>Punime Ndërtimi Parku Fotovoltaik 10 MW</td><td>Kiraç Elektrik</td><td>2024</td></tr>
+                        <tr><td>23</td><td>Ndërtim Linjë Kabllore 35 kV</td><td>Kiraç Elektrik</td><td>2024</td></tr>
+                        <tr><td>24</td><td>Punime në Linjën 35 kV</td><td>Meps</td><td>2024</td></tr>
+                        <tr><td>25</td><td>Ndërtim Trakti 220/110 kV</td><td>Matrix Konstruksion</td><td>2024</td></tr>
+                        <tr><td>26</td><td>Ndërtim Nënstacioni 220kV, ndërtesa dhe Linjë 220kV BLUE2</td><td>Matrix Konstruksion</td><td>2025</td></tr>
+                        <tr><td>27</td><td>Ndërtim Nënstacioni 110/20/10 Kafaraj</td><td>LA-OR Shpk</td><td>2025</td></tr>
+                        <tr><td>28</td><td>Ndërtim Linjë 110kV Piqeras</td><td>OST SHA</td><td>2025</td></tr>
+                        <tr><td>29</td><td>Ndërtesë 1 kt Hoxhare</td><td>MEP-s</td><td>2025</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== -->
+    <!--       LIGHTBOX     -->
+    <!-- ================== -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">×</span>
+        <div class="lightbox-nav">
+            <button class="lightbox-btn" onclick="navigateLightbox(-1)">←</button>
+            <button class="lightbox-btn" onclick="navigateLightbox(1)">→</button>
+        </div>
+        <img id="lightbox-img" src="" alt="Foto e zmadhuar">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+
+    <!-- ================== -->
+    <!--       CONTACT      -->
+    <!-- ================== -->
+    <section id="contact" class="contact">
+        <h2 class="section-title" data-i18n="contact_title">Na <span>Kontaktoni</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 data-i18n="contact_subtitle">Na gjeni këtu:</h3>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong data-i18n="contact_address_label">Adresa:</strong><br>
+                        <span data-i18n="contact_address">Lushnjë, Shqipëri</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong data-i18n="contact_phone_label">Telefon:</strong><br>
+                        <a href="tel:+355692626015" data-i18n="contact_phone1">+355 69 262 6015</a><br>
+                        <a href="tel:+355693216073" data-i18n="contact_phone2">+355 69 321 6073</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong data-i18n="contact_email_label">Email:</strong><br>
+                        <a href="mailto:info@ece.al" data-i18n="contact_email">info@ece.al</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong data-i18n="contact_hours_label">Orari i punës:</strong><br>
+                        <span data-i18n="contact_hours_week">E Hënë – E Premte: 08:00 – 16:00</span><br>
+                        <span data-i18n="contact_hours_sat">E Shtunë: 09:00 – 14:00</span><br>
+                        <span data-i18n="contact_hours_sun">E Diel: Pushim</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm">
+                    <label for="name" data-i18n="form_name">Emri juaj *</label>
+                    <input type="text" id="name" name="name" required placeholder="Shkruani emrin tuaj">
+
+                    <label for="phone" data-i18n="form_phone">Telefon *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+355 ...">
+
+                    <label for="email" data-i18n="form_email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="email@juaj.com">
+
+                    <label for="message" data-i18n="form_message">Mesazhi juaj *</label>
+                    <textarea id="message" name="message" rows="7" required placeholder="Na tregoni për projektin tuaj ose pyetjen..."></textarea>
+
+                    <button type="submit" data-i18n="form_submit">Dërgo Mesazh</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== -->
+    <!--        FOOTER      -->
+    <!-- ================== -->
+    <footer>
+        <p data-i18n="footer_text">© 2026 ECE sh.p.k | Të gjitha të drejtat e rezervuara | Zhvilluar në të gjithë Shqipërinë</p>
+    </footer>
+
+    <!-- ============================================ -->
+    <!--        JAVASCRIPT - FULL MULTILINGUAL + BUG FIX     -->
+    <!-- ============================================ -->
+    <script>
+        // ============================================
+        // MULTILINGUAL SYSTEM - COMPLETE & ROBUST
+        // ============================================
+        const translations = {
+            sq: {
+                title: "ECE sh.p.k | Ndërtim Cilësor & Profesional",
+                meta_description: "ECE sh.p.k - Kompani lider në ndërtim, rindërtim dhe zhvillim projektesh në Shqipëri. Cilësi, siguri dhe afat respektimi.",
+                nav_home: "Kryefaqja",
+                nav_about: "Rreth Nesh",
+                nav_services: "Shërbimet",
+                nav_video: "Video",
+                nav_gallery: "Galeri",
+                nav_contact: "Kontakt",
+                hero_title: "ECE sh.p.k",
+                hero_subtitle: "Ndërtim me cilësi të lartë, siguri dhe respektim të afateve",
+                hero_button: "Na Kontaktoni Tani",
+                about_title: "Rreth ECE sh.p.k",
+                about_subtitle: "Profesionalizëm & Përvojë që Nga Viti 2022",
+                about_p1: "ECE sh.p.k është një nga kompanitë në fushën e ndërtimit në Shqipëri. Me mbi 4 vjet përvojë, ne ofrojmë shërbime të plota në ndërtim banesash, objekte tregtare, infrastrukturë, linja elektrike dhe nënstacione elektrike",
+                about_p2: "Ekipi ynë përbëhet nga inxhinierë të certifikuar, arkitektë dhe punëtorë të kualifikuar që garantojnë cilësi të lartë në çdo projekt.",
+                about_p3: "Ne punojmë me materialet më të mira dhe teknologjitë më të avancuara për t'ju ofruar zgjidhje të qëndrueshme dhe estetike.",
+                stat_projects: "Projekte të Përfunduara",
+                stat_clients: "Klientë të Kënaqur",
+                stat_years: "Vite Përvojë",
+                stat_workers: "Punonjës Profesionistë",
+                services_title: "Shërbimet Tona",
+                service_residential: "Ndërtim Banesash",
+                service_residential_desc: "Ndërtim pallatesh dhe vilash moderne me cilësi premium dhe dizajn bashkëkohor.",
+                service_commercial: "Objekte Tregtare",
+                service_commercial_desc: "Ndërtim qendrash tregtare, dyqane dhe ambiente biznesi funksionale.",
+                service_powerlines: "Linja Elektrike",
+                service_powerlines_desc: "Ndërtim të linjave elektrike TL.",
+                service_infrastructure: "Infrastrukturë",
+                service_infrastructure_desc: "Ndërtim rrugësh, ura dhe sisteme kullimi sipas standardeve evropiane.",
+                service_design: "Projektim",
+                service_design_desc: "Projektim arkitektonik dhe inxhinierik nga ideja deri te realizimi.",
+                service_green: "Ndërtim i Gjelbër",
+                service_green_desc: "Zbatimi i standardeve të ndërtimit të qëndrueshëm dhe efikas energjetikisht.",
+                video_title: "Shiko një Projekt tonë në veprim",
+                video_fallback: "Shfletuesi juaj nuk mbështet formatin e videos.",
+                gallery_title: "Galeri e Projekteve & Informacione",
+                gallery_golem: "Pallat në Golem",
+                gallery_fier: "Nënstacion në Fier",
+                gallery_lushnje: "Linjë Elektrike Lushnjë",
+                gallery_machines: "Pajisje / Machines",
+                gallery_projects: "Punime të Realizuara / Projekte të Përfunduara",
+                table_type: "Lloji",
+                table_brand: "Marka",
+                table_model: "Modeli",
+                table_nr: "Nr.",
+                table_object: "Objekti",
+                table_investor: "Investori",
+                table_year: "Viti",
+                contact_title: "Na Kontaktoni",
+                contact_subtitle: "Na gjeni këtu:",
+                contact_address_label: "Adresa:",
+                contact_address: "Lushnjë, Shqipëri",
+                contact_phone_label: "Telefon:",
+                contact_phone1: "+355 69 262 6015",
+                contact_phone2: "+355 69 321 6073",
+                contact_email_label: "Email:",
+                contact_email: "info@ece.al",
+                contact_hours_label: "Orari i punës:",
+                contact_hours_week: "E Hënë – E Premte: 08:00 – 16:00",
+                contact_hours_sat: "E Shtunë: 09:00 – 14:00",
+                contact_hours_sun: "E Diel: Pushim",
+                form_name: "Emri juaj *",
+                form_phone: "Telefon *",
+                form_email: "Email *",
+                form_message: "Mesazhi juaj *",
+                form_submit: "Dërgo Mesazh",
+                footer_text: "© 2026 ECE sh.p.k | Të gjitha të drejtat e rezervuara | Zhvilluar në të gjithë Shqipërinë"
+            },
+            en: {
+                title: "ECE sh.p.k | Quality & Professional Construction",
+                meta_description: "ECE sh.p.k - Leading company in construction, reconstruction and project development in Albania. Quality, safety and deadline respect.",
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_services: "Services",
+                nav_video: "Video",
+                nav_gallery: "Gallery",
+                nav_contact: "Contact",
+                hero_title: "ECE sh.p.k",
+                hero_subtitle: "High-quality construction, safety and deadline respect",
+                hero_button: "Contact Us Now",
+                about_title: "About ECE sh.p.k",
+                about_subtitle: "Professionalism & Experience Since 2022",
+                about_p1: "ECE sh.p.k is one of the leading companies in the construction sector in Albania. With over 4 years of experience, we offer full services in residential construction, commercial buildings, infrastructure, power lines and electrical substations.",
+                about_p2: "Our team consists of certified engineers, architects and qualified workers who guarantee high quality in every project.",
+                about_p3: "We work with the best materials and the most advanced technologies to offer you sustainable and aesthetic solutions.",
+                stat_projects: "Completed Projects",
+                stat_clients: "Satisfied Clients",
+                stat_years: "Years of Experience",
+                stat_workers: "Professional Workers",
+                services_title: "Our Services",
+                service_residential: "Residential Construction",
+                service_residential_desc: "Construction of modern buildings and villas with premium quality and contemporary design.",
+                service_commercial: "Commercial Buildings",
+                service_commercial_desc: "Construction of shopping centers, shops and functional business premises.",
+                service_powerlines: "Power Lines",
+                service_powerlines_desc: "Construction of high-voltage power lines (TL).",
+                service_infrastructure: "Infrastructure",
+                service_infrastructure_desc: "Construction of roads, bridges and drainage systems according to European standards.",
+                service_design: "Design",
+                service_design_desc: "Architectural and engineering design from concept to realization.",
+                service_green: "Green Construction",
+                service_green_desc: "Implementation of sustainable and energy-efficient construction standards.",
+                video_title: "Watch one of our Projects in Action",
+                video_fallback: "Your browser does not support the video format.",
+                gallery_title: "Gallery of Projects & Information",
+                gallery_golem: "Building in Golem",
+                gallery_fier: "Substation in Fier",
+                gallery_lushnje: "Power Line Lushnjë",
+                gallery_machines: "Equipment / Machines",
+                gallery_projects: "Completed Works / Finished Projects",
+                table_type: "Type",
+                table_brand: "Brand",
+                table_model: "Model",
+                table_nr: "No.",
+                table_object: "Object",
+                table_investor: "Investor",
+                table_year: "Year",
+                contact_title: "Contact Us",
+                contact_subtitle: "Find us here:",
+                contact_address_label: "Address:",
+                contact_address: "Lushnjë, Albania",
+                contact_phone_label: "Phone:",
+                contact_phone1: "+355 69 262 6015",
+                contact_phone2: "+355 69 321 6073",
+                contact_email_label: "Email:",
+                contact_email: "info@ece.al",
+                contact_hours_label: "Working Hours:",
+                contact_hours_week: "Monday – Friday: 08:00 – 16:00",
+                contact_hours_sat: "Saturday: 09:00 – 14:00",
+                contact_hours_sun: "Sunday: Closed",
+                form_name: "Your Name *",
+                form_phone: "Phone *",
+                form_email: "Email *",
+                form_message: "Your Message *",
+                form_submit: "Send Message",
+                footer_text: "© 2026 ECE sh.p.k | All rights reserved | Developed throughout Albania"
+            },
+            it: {
+                title: "ECE sh.p.k | Costruzioni di Qualità e Professionali",
+                meta_description: "ECE sh.p.k - Azienda leader nelle costruzioni, ristrutturazioni e sviluppo progetti in Albania. Qualità, sicurezza e rispetto delle scadenze.",
+                nav_home: "Home",
+                nav_about: "Chi Siamo",
+                nav_services: "Servizi",
+                nav_video: "Video",
+                nav_gallery: "Galleria",
+                nav_contact: "Contatti",
+                hero_title: "ECE sh.p.k",
+                hero_subtitle: "Costruzioni di alta qualità, sicurezza e rispetto delle scadenze",
+                hero_button: "Contattaci Ora",
+                about_title: "Informazioni su ECE sh.p.k",
+                about_subtitle: "Professionalità ed Esperienza dal 2022",
+                about_p1: "ECE sh.p.k è una delle aziende leader nel settore delle costruzioni in Albania. Con oltre 4 anni di esperienza, offriamo servizi completi nella costruzione residenziale, edifici commerciali, infrastrutture, linee elettriche e sottostazioni elettriche.",
+                about_p2: "Il nostro team è composto da ingegneri certificati, architetti e operai qualificati che garantiscono alta qualità in ogni progetto.",
+                about_p3: "Lavoriamo con i migliori materiali e le tecnologie più avanzate per offrirvi soluzioni durevoli ed estetiche.",
+                stat_projects: "Progetti Completati",
+                stat_clients: "Clienti Soddisfatti",
+                stat_years: "Anni di Esperienza",
+                stat_workers: "Lavoratori Professionali",
+                services_title: "I Nostri Servizi",
+                service_residential: "Costruzioni Residenziali",
+                service_residential_desc: "Costruzione di edifici e ville moderne con qualità premium e design contemporaneo.",
+                service_commercial: "Edifici Commerciali",
+                service_commercial_desc: "Costruzione di centri commerciali, negozi e locali business funzionali.",
+                service_powerlines: "Linee Elettriche",
+                service_powerlines_desc: "Costruzione di linee elettriche ad alta tensione (TL).",
+                service_infrastructure: "Infrastrutture",
+                service_infrastructure_desc: "Costruzione di strade, ponti e sistemi di drenaggio secondo standard europei.",
+                service_design: "Progettazione",
+                service_design_desc: "Progettazione architettonica e ingegneristica dall'idea alla realizzazione.",
+                service_green: "Costruzioni Verdi",
+                service_green_desc: "Applicazione di standard di costruzione sostenibile ed efficiente dal punto di vista energetico.",
+                video_title: "Guarda uno dei nostri Progetti in Azione",
+                video_fallback: "Il tuo browser non supporta il formato video.",
+                gallery_title: "Galleria dei Progetti e Informazioni",
+                gallery_golem: "Edificio a Golem",
+                gallery_fier: "Sottostazione a Fier",
+                gallery_lushnje: "Linea Elettrica Lushnjë",
+                gallery_machines: "Macchine / Attrezzature",
+                gallery_projects: "Lavori Realizzati / Progetti Completati",
+                table_type: "Tipo",
+                table_brand: "Marca",
+                table_model: "Modello",
+                table_nr: "Nr.",
+                table_object: "Oggetto",
+                table_investor: "Investitore",
+                table_year: "Anno",
+                contact_title: "Contattaci",
+                contact_subtitle: "Trovaci qui:",
+                contact_address_label: "Indirizzo:",
+                contact_address: "Lushnjë, Albania",
+                contact_phone_label: "Telefono:",
+                contact_phone1: "+355 69 262 6015",
+                contact_phone2: "+355 69 321 6073",
+                contact_email_label: "Email:",
+                contact_email: "info@ece.al",
+                contact_hours_label: "Orario di Lavoro:",
+                contact_hours_week: "Lunedì – Venerdì: 08:00 – 16:00",
+                contact_hours_sat: "Sabato: 09:00 – 14:00",
+                contact_hours_sun: "Domenica: Chiuso",
+                form_name: "Il tuo Nome *",
+                form_phone: "Telefono *",
+                form_email: "Email *",
+                form_message: "Il tuo Messaggio *",
+                form_submit: "Invia Messaggio",
+                footer_text: "© 2026 ECE sh.p.k | Tutti i diritti riservati | Sviluppato in tutta l'Albania"
+            },
+            de: {
+                title: "ECE sh.p.k | Qualitäts- und Profi-Bau",
+                meta_description: "ECE sh.p.k – Führendes Unternehmen im Bauwesen, Wiederaufbau und Projektentwicklung in Albanien. Qualität, Sicherheit und Termintreue.",
+                nav_home: "Startseite",
+                nav_about: "Über uns",
+                nav_services: "Leistungen",
+                nav_video: "Video",
+                nav_gallery: "Galerie",
+                nav_contact: "Kontakt",
+                hero_title: "ECE sh.p.k",
+                hero_subtitle: "Hochwertiger Bau, Sicherheit und Termintreue",
+                hero_button: "Jetzt kontaktieren",
+                about_title: "Über ECE sh.p.k",
+                about_subtitle: "Professionalität & Erfahrung seit 2022",
+                about_p1: "ECE sh.p.k ist eines der führenden Unternehmen im Bausektor in Albanien. Mit über 4 Jahren Erfahrung bieten wir Komplettleistungen im Wohnbau, Gewerbebau, Infrastruktur, Stromleitungen und Umspannwerken an.",
+                about_p2: "Unser Team besteht aus zertifizierten Ingenieuren, Architekten und qualifizierten Arbeitern, die höchste Qualität in jedem Projekt garantieren.",
+                about_p3: "Wir arbeiten mit den besten Materialien und modernsten Technologien, um Ihnen langlebige und ästhetische Lösungen zu bieten.",
+                stat_projects: "Abgeschlossene Projekte",
+                stat_clients: "Zufriedene Kunden",
+                stat_years: "Jahre Erfahrung",
+                stat_workers: "Professionelle Mitarbeiter",
+                services_title: "Unsere Leistungen",
+                service_residential: "Wohnbau",
+                service_residential_desc: "Bau moderner Gebäude und Villen mit Premium-Qualität und zeitgenössischem Design.",
+                service_commercial: "Gewerbebau",
+                service_commercial_desc: "Bau von Einkaufszentren, Geschäften und funktionalen Geschäftsräumen.",
+                service_powerlines: "Stromleitungen",
+                service_powerlines_desc: "Bau von Hochspannungsleitungen (TL).",
+                service_infrastructure: "Infrastruktur",
+                service_infrastructure_desc: "Bau von Straßen, Brücken und Entwässerungssystemen nach europäischen Standards.",
+                service_design: "Planung",
+                service_design_desc: "Architektonische und ingenieurtechnische Planung von der Idee bis zur Realisierung.",
+                service_green: "Grünes Bauen",
+                service_green_desc: "Umsetzung nachhaltiger und energieeffizienter Baustandards.",
+                video_title: "Sehen Sie eines unserer Projekte in Aktion",
+                video_fallback: "Ihr Browser unterstützt das Videoformat nicht.",
+                gallery_title: "Galerie der Projekte & Informationen",
+                gallery_golem: "Gebäude in Golem",
+                gallery_fier: "Umspannwerk in Fier",
+                gallery_lushnje: "Stromleitung Lushnjë",
+                gallery_machines: "Maschinen / Ausrüstung",
+                gallery_projects: "Realisierte Arbeiten / Abgeschlossene Projekte",
+                table_type: "Typ",
+                table_brand: "Marke",
+                table_model: "Modell",
+                table_nr: "Nr.",
+                table_object: "Objekt",
+                table_investor: "Investor",
+                table_year: "Jahr",
+                contact_title: "Kontaktieren Sie uns",
+                contact_subtitle: "Hier finden Sie uns:",
+                contact_address_label: "Adresse:",
+                contact_address: "Lushnjë, Albanien",
+                contact_phone_label: "Telefon:",
+                contact_phone1: "+355 69 262 6015",
+                contact_phone2: "+355 69 321 6073",
+                contact_email_label: "E-Mail:",
+                contact_email: "info@ece.al",
+                contact_hours_label: "Arbeitszeiten:",
+                contact_hours_week: "Montag – Freitag: 08:00 – 16:00",
+                contact_hours_sat: "Samstag: 09:00 – 14:00",
+                contact_hours_sun: "Sonntag: Geschlossen",
+                form_name: "Ihr Name *",
+                form_phone: "Telefon *",
+                form_email: "E-Mail *",
+                form_message: "Ihre Nachricht *",
+                form_submit: "Nachricht senden",
+                footer_text: "© 2026 ECE sh.p.k | Alle Rechte vorbehalten | Entwickelt in ganz Albanien"
+            }
+        };
+
+        // ============================================
+        // LANGUAGE SWITCHER + CATEGORY TITLE FIX
+        // ============================================
+        const langButtons = document.querySelectorAll('#langSwitcher button');
+        const htmlElement = document.documentElement;
+
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            htmlElement.setAttribute('lang', lang);
+
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Update normal translatable elements
+            document.querySelectorAll('[data-i18n]:not(.cat-title)').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang]?.[key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else if (el.hasAttribute('data-i18n-attr')) {
+                        el.setAttribute(el.getAttribute('data-i18n-attr'), translations[lang][key]);
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Special handling for category titles – only change text, keep arrow
+            document.querySelectorAll('.category-header .cat-title').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang]?.[key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // Load saved or default language
+        const savedLang = localStorage.getItem('preferredLanguage') || 'sq';
+        setLanguage(savedLang);
+
+        // Language button listeners
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        // ============================================
+        // ACCORDION (CATEGORY TOGGLE) – FIXED
+        // ============================================
+        function toggleCategory(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+
+            // Toggle visibility
+            content.classList.toggle('active');
+
+            // Rotate arrow
+            arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+
+        // ============================================
+        // LIGHTBOX FUNCTIONALITY
+        // ============================================
+        let currentLightboxIndex = 0;
+        let currentCategoryImages = [];
+        let currentCategoryCaptions = [];
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.getAttribute('data-src');
+                const caption = item.getAttribute('data-caption');
+                const index = parseInt(item.getAttribute('data-index'));
+
+                document.getElementById('lightbox-img').src = src;
+                document.getElementById('lightbox-caption').textContent = caption;
+                document.getElementById('lightbox').classList.add('active');
+
+                currentLightboxIndex = index;
+                currentCategoryImages = Array.from(item.closest('.gallery-grid').querySelectorAll('.gallery-item')).map(i => i.getAttribute('data-src'));
+                currentCategoryCaptions = Array.from(item.closest('.gallery-grid').querySelectorAll('.gallery-item')).map(i => i.getAttribute('data-caption'));
+            });
+        });
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        function navigateLightbox(direction) {
+            currentLightboxIndex += direction;
+            if (currentLightboxIndex < 0) currentLightboxIndex = currentCategoryImages.length - 1;
+            if (currentLightboxIndex >= currentCategoryImages.length) currentLightboxIndex = 0;
+
+            document.getElementById('lightbox-img').src = currentCategoryImages[currentLightboxIndex];
+            document.getElementById('lightbox-caption').textContent = currentCategoryCaptions[currentLightboxIndex];
+        }
+
+        document.getElementById('lightbox')?.addEventListener('click', e => {
+            if (e.target === document.getElementById('lightbox') || e.target.classList.contains('close-lightbox')) {
+                closeLightbox();
+            }
+        });
+
+        // ============================================
+        // CONTACT FORM (demo alert)
+        // ============================================
+        document.getElementById('contactForm')?.addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Faleminderit! Mesazhi juaj është dërguar. Do t’ju përgjigjemi sa më shpejt.');
+            e.target.reset();
+        });
+
+        // ============================================
+        // INITIALIZE EVERYTHING
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Re-apply language on load in case of late elements
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
